@@ -1,0 +1,21 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<PageTitle>Index</PageTitle>
+
+<h1>Port Forwarded Base URI</h1>
+
+<p>NavigationManager.BaseUri: @NavigationManager.BaseUri</p>
+@if (uri is not null)
+{
+    <p>Initialized URI: @uri</p>
+}
+
+@code {
+    string? uri;
+
+    protected override void OnInitialized()
+    {
+        uri = NavigationManager.BaseUri;
+    }
+}
